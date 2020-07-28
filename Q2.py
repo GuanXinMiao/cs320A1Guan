@@ -2,14 +2,15 @@ import sys
 
 def read(txt):
 	file_list = []
-
 	for i in txt:
 		file_list.append(i)
 
 	return file_list
+
 def convert(l):
 	for i in l:
 		for k in range(len(i)): i[k] = int(i[k])
+
 def stable_marriage(problem_list):
 	current_line = 0
 	num_of_nodes = int(problem_list[current_line])
@@ -49,7 +50,6 @@ def pink_perfers(pink_l, pink_node, b, b1, N):
 		if(pink_l[pink_node][i] == b1): return False
 	return False
 
-
 def gale_shapley(blue, pink, N):
 	freeNode = N
 	blue_free, pink_match = [True for i in range (N)], [None for i in range(N)]
@@ -84,5 +84,5 @@ def main():
 	txt_input = sys.stdin
 	p_list = read(txt_input)
 	stable_marriage(p_list)
-	
+
 main()
