@@ -44,7 +44,6 @@ def print_output(pink_l):
 		print("Blue node %d matched with pink node %d"%(i + 1, d[i+1]))
 
 def pink_perfers(pink_l, pink_node, b, b1, N):
-
 	for i in range(N):
 		if(pink_l[pink_node][i] == b + 1): return True
 		if(pink_l[pink_node][i] == b1): return False
@@ -73,7 +72,7 @@ def gale_shapley(blue, pink, N):
 			else:
 				b1 = pink_match[pink_node - 1]
 
-				if(pink_perfers(pink, pink_node, b, b1, N)):
+				if(pink_perfers(pink, pink_node - 1, b, b1, N)):
 					pink_match[pink_node - 1] = b + 1
 					blue_free[b] = False
 					blue_free[b1 - 1] = True
